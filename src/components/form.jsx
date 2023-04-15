@@ -27,48 +27,28 @@ const Form = () => {
 
   const validateDate = () => {
     let dateInput = moment([date().year, date().month - 1, date().day]);
+    let dateInputValidTemp = {};
 
-    if (date().year === 0) {
-      return setInputValid((prev) => {
-        return { ...prev, year: { isFilled: false, isValid: true } };
-      });
-    } else {
-      let valid = true;
-      if (moment() < dateInput || dateInput.invalidAt() === 0) {
-        valid = false;
+    Object.keys(date()).map((key, index) => {
+      if (date()[key] === 0) {
+        dateInputValidTemp[key] = { isFilled: false, isValid: true };
       }
-      setInputValid((prev) => {
-        return { ...prev, year: { isFilled: true, isValid: valid } };
-      });
-    }
-
-    if (date().month === 0) {
-      return setInputValid((prev) => {
-        return { ...prev, month: { isFilled: false, isValid: true } };
-      });
-    } else {
-      let valid = true;
-      if (!dateInput.isValid() && dateInput.invalidAt() === 1) {
-        valid = false;
+      if (date()[key] !== 0) {
+        let valid = true;
+        if (key === "year") {
+          moment() < dateInput || dateInput.invalidAt() === 0
+            ? (valid = false)
+            : false;
+        }
+        if (key !== "year") {
+          !dateInput.isValid() && dateInput.invalidAt() === index
+            ? (valid = false)
+            : false;
+        }
+        dateInputValidTemp[key] = { isFilled: true, isValid: valid };
       }
-      setInputValid((prev) => {
-        return { ...prev, month: { isFilled: true, isValid: valid } };
-      });
-    }
-
-    if (date().day === 0) {
-      return setInputValid((prev) => {
-        return { ...prev, day: { isFilled: false, isValid: true } };
-      });
-    } else {
-      let valid = true;
-      if (!dateInput.isValid() && dateInput.invalidAt() === 2) {
-        valid = false;
-      }
-      setInputValid((prev) => {
-        return { ...prev, day: { isFilled: true, isValid: valid } };
-      });
-    }
+    });
+    setInputValid(dateInputValidTemp);
 
     const validationArr = [];
     Object.keys(inputValid()).map((key) => {

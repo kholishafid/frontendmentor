@@ -3,24 +3,24 @@ import { createSignal, createContext, useContext } from "solid-js";
 
 export const DateStoreContext = createContext(
   {
-    day: 0,
-    month: 0,
     year: 0,
+    month: 0,
+    day: 0,
   },
   {}
 );
 
 export function DateStoreProvider(props) {
   const [date, setDate] = createSignal({
-    day: 0,
-    month: 0,
     year: 0,
+    month: 0,
+    day: 0,
   });
   const [valid, setValid] = createSignal(false);
   const [dateDiffDisplay, setDateDiffDisplay] = createSignal({
-    day: 0,
-    month: 0,
     year: 0,
+    month: 0,
+    day: 0,
   });
   const dates = [
     date,
