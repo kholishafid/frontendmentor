@@ -1,0 +1,64 @@
+body {
+    background-color: hsl(217, 54%, 11%);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    font-family: 'Outfit', sans-serif;
+}
+
+.card {
+    width: 350px;
+    background-color:hsl(216, 50%, 16%);
+    padding: 25px;
+    box-sizing: border-box;
+   border-radius: 25px;
+}
+
+.card .nft {
+    width: 300px;
+    height: 300px;
+    border-radius: 15px;
+}
+
+.card .aut {
+    width: 30px;
+    height: 30px;
+}
+
+.card .inf {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.card .avb{
+    display: flex;
+    justify-content: space-between;
+}
+
+.inf p {
+    box-sizing: border-box;
+    margin-left: 20px;
+}
+
+.name {
+    color:hsl(0, 0%, 100%);
+}
+
+.txt-softblue{
+    color: hsl(215, 51%, 70%);
+}
+
+.text-cyan {
+    color:hsl(178, 100%, 50%);
+}
+
+hr {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
