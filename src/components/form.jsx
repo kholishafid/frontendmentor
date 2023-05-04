@@ -65,8 +65,8 @@ const Form = () => {
 
   return (
     <div>
-      <div className="flex gap-8">
-        <label htmlFor="day" class="relative">
+      <div className="grid grid-cols-3 gap-4 md:flex md:gap-8">
+        <div htmlFor="day" class="relative">
           <p className="uppercase tracking-[4px] mb-2 text-smokey-grey font-bold">
             day
           </p>
@@ -74,7 +74,7 @@ const Form = () => {
             type="number"
             placeholder="DD"
             id="day"
-            className={`text-[32px] w-40 p-2 px-4 font-bold border border-light-grey outline-none rounded-lg ${
+            className={`text-[24px] md:text-[32px] w-full md:w-40 p-2 px-4 font-bold border border-light-grey outline-none rounded-lg ${
               !inputValid().day.isFilled || !inputValid().day.isValid
                 ? "border-light-red"
                 : ""
@@ -89,8 +89,8 @@ const Form = () => {
               <p class="text-light-red italic">Must be a valid day</p>
             )}
           </div>
-        </label>
-        <label htmlFor="month" class="relative">
+        </div>
+        <div htmlFor="month" class="relative">
           <p className="uppercase tracking-[4px] mb-2 text-smokey-grey font-bold">
             month
           </p>
@@ -98,7 +98,7 @@ const Form = () => {
             type="number"
             placeholder="MM"
             id="month"
-            className={`text-[32px] w-40 p-2 px-4 font-bold border border-light-grey outline-none rounded-lg ${
+            className={`text-[24px] md:text-[32px] w-full md:w-40 p-2 px-4 font-bold border border-light-grey outline-none rounded-lg ${
               !inputValid().month.isFilled || !inputValid().month.isValid
                 ? "border-light-red"
                 : ""
@@ -113,8 +113,8 @@ const Form = () => {
               <p class="text-light-red italic text-sm">Must be a valid month</p>
             )}
           </div>
-        </label>
-        <label htmlFor="year" class="relative">
+        </div>
+        <div htmlFor="year" class="relative">
           <p className="uppercase tracking-[4px] mb-2 text-smokey-grey font-bold">
             year
           </p>
@@ -122,7 +122,7 @@ const Form = () => {
             type="number"
             placeholder="YYYY"
             id="year"
-            className={`text-[32px] w-40 p-2 px-4 font-bold border border-light-grey outline-none rounded-lg ${
+            className={`text-[24px] md:text-[32px] w-full md:w-40 p-2 px-4 font-bold border border-light-grey outline-none rounded-lg ${
               !inputValid().year.isFilled || !inputValid().year.isValid
                 ? "border-light-red"
                 : ""
@@ -137,16 +137,17 @@ const Form = () => {
               <p class="text-light-red italic">Must be in the past</p>
             )}
           </div>
-        </label>
+        </div>
       </div>
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 my-8">
         <hr className="flex-1" />
         <button
-          className="bg-purple-primary p-4 w-20 h-20 rounded-full active:bg-off-black"
+          className="bg-purple-primary p-4 w-16 h-16 sm:w-20 sm:h-20 rounded-full active:bg-off-black"
           onClick={validateDate}
         >
           <img src={arrow} alt="arrow" className="m-0 p-0 w-20" />
         </button>
+        <hr className="flex-1 md:hidden" />
       </div>
     </div>
   );
