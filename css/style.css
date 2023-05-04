@@ -1,0 +1,96 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(225, 100%, 94%);
+}
+
+.card {
+    width: 350px;
+    background-color: white;
+    box-sizing: border-box;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.card .herosvg {
+    width: 350px;
+    height: 18  0px;
+}
+
+.card .main {
+    padding: 35px;
+    text-align: center;
+}
+
+.card .main h3 {
+    color: hsl(223, 47%, 23%);
+}
+
+.card .main p {
+    color: hsl(224, 23%, 55%);
+}
+
+.card .main .sucribe {
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "ic pl pl pl ch ch"
+                         "ic pi pi pi ch ch";
+    font-size: 14px;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+.ic {
+    grid-area: ic;
+}
+
+.pl {
+    grid-area: pl;
+    text-align: left;
+    padding-left: 15px;
+    color: hsl(223, 47%, 23%);
+}
+
+.pi {
+    grid-area: pi;
+    text-align: left;
+    padding-left: 15px;
+    color: hsl(224, 23%, 55%);
+}
+
+.ch {
+    grid-area: ch;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.ch a {
+    color: hsl(224, 23%, 55%);
+}
+
+.abtn {
+    display: block;
+    text-decoration: none;
+    background-color: hsl(224, 23%, 55%);
+    color: hsl(225, 100%, 98%);
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.abtnc {
+    display: block;
+    text-decoration: none;
+    color: hsl(223, 47%, 23%);
+    padding: 10px;
+    border-radius: 10px;
+}
