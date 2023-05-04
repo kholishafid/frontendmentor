@@ -1,0 +1,120 @@
+@font-face {
+    font-family: overpass;
+    src: url(font/Overpass-VariableFont_wght.woff);
+}
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    height: 100vh;
+    font-family: overpass;
+    background-color: hsl(216, 12%, 8%);
+    color: white;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card {
+    width: 300px;
+    height: 320px;
+    background-color:  hsl(213, 19%, 18%);
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+    box-sizing: border-box;
+}
+.star {
+  width: 20px;
+  height: 20px;
+  padding: 6px;
+  background-color: hsl(215, 12%, 28%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  margin: 10px 0;
+}
+.star img {
+    width: 13px;
+}
+.card h2 {
+    margin: 10px 0;
+}
+.card p {
+    margin: 10px 0;
+    color: hsl(217, 12%, 63%);
+    font-weight: 300;
+}
+.rating ul {
+    display: flex;
+    justify-content: space-between;
+}
+.rating ul li {
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    padding: 6px;
+    background-color:  hsl(215, 12%, 28%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    margin: 10px 0;
+    padding-top: 8px;
+    padding-bottom: 3px;
+    cursor: pointer;
+}
+.rating ul li:hover {
+    background-color: hsl(216, 12%, 54%);
+}
+.rating-active {
+    box-shadow: inset 0 0 0 100px hsl(25, 97%, 53%);
+    outline: 3px solid  hsl(25, 97%, 53%);
+    outline-offset: 2px;
+}
+.rating-e {
+    box-shadow: inset 0 0 0 100px hsla(25, 85%, 63%, 0.381);
+}
+.alert {
+    font-size: 10px;
+    color: hsl(25, 97%, 53%);
+    letter-spacing: 1px;
+    display: none;
+}
+.submit-button {
+    display: block;
+    color: white;
+    background-color: hsl(25, 97%, 53%);
+    padding: 8px;
+    border-radius: 50px;
+    margin: 10px 0;
+    letter-spacing: 2px;
+    font-size: 14px;
+    font-weight: 600;
+    outline: none;
+    border: none;
+    text-align: center;
+}
+.submit-button:hover {
+    background-color: white;
+    color: hsl(25, 97%, 53%);
+}
+
+.c2 {
+    padding: 2rem 2rem;
+    text-align: center;
+    display: none;
+}
+.card.c2 img {
+    width: 120px;
+}
+.y-rating {
+    width: 150px;
+    margin: 10px auto 30px auto;
+    background-color:  hsl(215, 12%, 28%);
+    color:  hsl(25, 97%, 53%);
+    font-size: 12px;
+    padding: 3px 0;
+    border-radius: 50px;
+}
