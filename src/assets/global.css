@@ -1,0 +1,41 @@
+.title {
+  width: fit-content;
+  font-family: 'Barlow Condensed', sans-serif;
+  display: flex;
+  gap: 16px;
+  margin: 24px auto 32px auto;
+  text-transform: uppercase;
+}
+
+.title__num {
+  color: rgba(255, 255, 255, 0.25);
+  font-weight: 700;
+}
+
+.title__text {
+  color: white;
+}
+
+.paragraph {
+  font-size: 15px;
+  line-height: 25px;
+  text-align: center;
+}
+
+@media screen and (min-width: 760px) {
+  .title {
+    margin: 40px auto 60px 38px;
+    font-size: 24px;
+  }
+
+  .paragraph {
+    font-size: 16px;
+    line-height: 28px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .paragraph {
+    text-align: left;
+  }
+}
