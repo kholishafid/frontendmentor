@@ -52,19 +52,37 @@
   margin: 81px auto 48px auto;
   position: relative;
   z-index: 55;
+  cursor: pointer;
 }
 
-.explore:hover ::before {
+.explore:hover::before {
   content: '';
   display: block;
   position: absolute;
   inset: 0;
+  left: -25%;
+  top: -25%;
   border-radius: 100%;
   width: 150%;
   height: 150%;
-  background-color: aqua;
+  background-color: rgba(255, 255, 255, 0.25);
   transform: translateX();
-  z-index: 1;
+  z-index: -2;
+}
+
+.explore:hover::after {
+  content: '';
+  display: block;
+  position: absolute;
+  inset: 0;
+  left: 0;
+  top: 0;
+  border-radius: 100%;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  transform: translateX();
+  z-index: -1;
 }
 
 .explore__label {

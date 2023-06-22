@@ -22,11 +22,21 @@ watchEffect(() => {
       <p class="title__text">Meet your crew</p>
     </div>
     <div class="crew">
-      <img class="crew__image" :src="crewData.img" :alt="crewData.name" draggable="false" />
+      <img
+        class="crew__image"
+        :src="crewData.img"
+        :alt="crewData.name"
+        draggable="false"
+      />
       <article class="crew__article">
         <div class="slide-nav">
-          <div class="slide-nav__item" :class="{ 'item--active': index === crewIndex }" v-for="(_, index) in 4"
-            :key="index" @click="crewIndex = index"></div>
+          <div
+            class="slide-nav__item"
+            :class="{ 'item--active': index === crewIndex }"
+            v-for="(_, index) in 4"
+            :key="index"
+            @click="crewIndex = index"
+          ></div>
         </div>
         <section>
           <p class="crew__role">{{ crewData.role }}</p>
@@ -71,6 +81,11 @@ watchEffect(() => {
   height: 10px;
   background-color: #979797;
   border-radius: 100%;
+  cursor: pointer;
+}
+
+.slide-nav__item:hover {
+  background-color: #d8d8d8;
 }
 
 .item--active {

@@ -16,13 +16,19 @@ const technologyDetail = computed(() => {
       <p class="title__text">Space launch 101</p>
     </div>
     <div class="technology">
-      <div>
-        <img class="technology__image" :src="technologyDetail.img" :alt="technologyDetail.name" />
-      </div>
+      <div
+        class="technology__image"
+        :class="technologyDetail.img"
+      ></div>
       <section class="technology__content">
         <div class="technology__navigation">
-          <div class="technology__switch" v-for="index in 3" :key="index"
-            :class="{ 'technology__switch--active': state + 1 === index }" @click="state = index - 1">
+          <div
+            class="technology__switch"
+            v-for="index in 3"
+            :key="index"
+            :class="{ 'technology__switch--active': state + 1 === index }"
+            @click="state = index - 1"
+          >
             {{ index }}
           </div>
         </div>
@@ -41,6 +47,20 @@ const technologyDetail = computed(() => {
 <style scoped>
 .technology__image {
   width: 100vw;
+  aspect-ratio: 27/12;
+  background-size: cover;
+}
+
+.launch__image {
+  background-image: url('../assets/technology/image-launch-vehicle-landscape.jpg');
+}
+
+.spaceport__image {
+  background-image: url('../assets/technology/image-spaceport-landscape.jpg');
+}
+
+.spacecapsule__image {
+  background-image: url('../assets/technology/image-space-capsule-landscape.jpg');
 }
 
 .technology__navigation {
@@ -57,6 +77,12 @@ const technologyDetail = computed(() => {
   border: 1px solid #979797;
   display: grid;
   place-items: center;
+  color: white;
+  cursor: pointer;
+}
+
+.technology__switch:hover {
+  border-color: white;
   color: white;
 }
 
@@ -94,6 +120,18 @@ const technologyDetail = computed(() => {
 }
 
 @media screen and (min-width: 1024px) {
+  .launch__image {
+    background-image: url(../assets/technology/image-launch-vehicle-portrait.jpg);
+  }
+
+  .spacecapsule__image {
+    background-image: url(../assets/technology/image-space-capsule-portrait.jpg);
+  }
+
+  .spaceport__image {
+    background-image: url(../assets/technology/image-spaceport-portrait.jpg);
+  }
+
   .technology {
     display: flex;
     margin: 0 auto;

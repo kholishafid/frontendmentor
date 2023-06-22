@@ -7,7 +7,12 @@ const sidebarActive = ref<boolean>(false)
 
 <template>
   <nav class="navbar">
-    <img src="@/assets/shared/logo.svg" class="logo" alt="Space Tourism Logo" />
+    <img
+      src="@/assets/shared/logo.svg"
+      class="logo"
+      alt="Space Tourism Logo"
+      @click="$router.push('/')"
+    />
     <img
       src="@/assets/shared/icon-hamburger.svg"
       alt="Space - Hamburger"
@@ -16,20 +21,36 @@ const sidebarActive = ref<boolean>(false)
     />
     <ul class="navbar__route">
       <li class="route__item">
-        <RouterLink class="route__link" to="/">Home</RouterLink>
+        <RouterLink
+          class="route__link"
+          to="/"
+        >Home</RouterLink>
       </li>
       <li class="route__item">
-        <RouterLink class="route__link" to="/destination" exact>Destination</RouterLink>
+        <RouterLink
+          class="route__link"
+          to="/destination"
+          exact
+        >Destination</RouterLink>
       </li>
       <li class="route__item">
-        <RouterLink class="route__link" to="/crew">Crew</RouterLink>
+        <RouterLink
+          class="route__link"
+          to="/crew"
+        >Crew</RouterLink>
       </li>
       <li class="route__item">
-        <RouterLink class="route__link" to="/technology">Technology</RouterLink>
+        <RouterLink
+          class="route__link"
+          to="/technology"
+        >Technology</RouterLink>
       </li>
     </ul>
   </nav>
-  <SpaceSidebar @close="(event) => (sidebarActive = event.value)" v-if="sidebarActive" />
+  <SpaceSidebar
+    @close="(event) => (sidebarActive = event)"
+    v-if="sidebarActive"
+  />
 </template>
 
 <style scoped>
@@ -39,39 +60,55 @@ const sidebarActive = ref<boolean>(false)
   align-items: center;
   justify-content: space-between;
 }
+
 .logo {
   width: 40px;
   height: 40px;
 }
+
 .navbar__route {
   padding: 40px 48px;
   display: none;
   gap: 38px;
   background-color: rgba(255, 255, 255, 0.1);
 }
+
 .navbar__route .route__link {
   text-transform: uppercase;
   color: white;
   font-family: 'Barlow Condensed', sans-serif;
 }
+
 .route__link {
   text-decoration: none;
 }
+
+.route__link:hover {
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.4);
+  text-underline-offset: 38px;
+  text-decoration-thickness: 3px;
+}
+
 @media screen and (min-width: 760px) {
   .navbar {
     padding: 0;
   }
+
   .logo {
     width: 48px;
     height: 48px;
     padding-left: 40px;
   }
+
   .navbar__hamburger {
     display: none;
   }
+
   .navbar__route {
     display: flex;
   }
+
   .router-link-exact-active {
     text-decoration: underline;
     text-decoration-color: white;

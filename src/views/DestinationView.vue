@@ -25,11 +25,23 @@ const placeDetail = computed(() => {
       <p class="title__text">Pick your destination</p>
     </div>
     <div class="place">
-      <img class="place__image" :src="placeImage" alt="" />
+      <img
+        class="place__image"
+        :src="placeImage"
+        alt=""
+      />
       <article class="place__article">
         <ul class="place__choice">
-          <li class="place__item" v-for="(place, index) in placeChoice" :key="index" @click="placeActive = place">
-            <span class="item__text" :class="{ active: Boolean(placeActive === place) }">
+          <li
+            class="place__item"
+            v-for="(place, index) in placeChoice"
+            :key="index"
+            @click="placeActive = place"
+          >
+            <span
+              class="item__text"
+              :class="{ active: Boolean(placeActive === place) }"
+            >
               {{ place }}
             </span>
           </li>
@@ -57,6 +69,14 @@ const placeDetail = computed(() => {
   text-decoration: underline;
   text-underline-offset: 8px;
   text-decoration-color: white;
+  text-decoration-thickness: 3px;
+}
+
+.item__text:hover {
+  text-decoration: underline;
+  text-underline-offset: 10px;
+  text-decoration-color: rgba(255, 255, 255, 0.5);
+  text-decoration-thickness: 3px;
 }
 
 .place__image {
